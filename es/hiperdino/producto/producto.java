@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class producto {
     
-    private String nombreProducto;
     private static String []arrayProductos = {"Jamon", "Queso", "Fanta", "Helado", "Fresas", "Arandanos", "Frambuesas", "Plátanos", "Sardinas", "Pan", "Col", "Croissant"};
 
 
