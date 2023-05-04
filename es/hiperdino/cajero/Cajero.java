@@ -9,17 +9,17 @@ import es.hiperdino.cliente.Cliente;
 public class Cajero {
 
     private final int NUMERO_CAJA = 18;
-    Queue<Cliente> colaClientes = new LinkedList<>();
+    static Queue<Cliente> colaClientes = new LinkedList<>();
 
-    Cliente nuevoCliente = new Cliente();
+    static Cliente nuevoCliente = new Cliente();
 
 
 
-    public void anadirCliente(){
+    public static void anadirCliente(){
         colaClientes.add(nuevoCliente);
     }
 
-    public void siguienteCliente(){
+    public static void siguienteCliente(){
         colaClientes.poll();
     }
 
