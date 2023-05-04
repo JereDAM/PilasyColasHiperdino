@@ -9,36 +9,38 @@ import es.hiperdino.cliente.Cliente;
 public class Cajero {
 
     private final int NUMERO_CAJA = 18;
-    private static boolean cajaabierta = false;
-    static Queue<Cliente> colaClientes = new LinkedList<>();
+    private boolean cajaabierta = false;
+    Queue<Cliente> colaClientes = new LinkedList<>();
 
-    static Cliente nuevoCliente = new Cliente();
-
-
-
-    public static void anadirCliente(){
+    public void anadirCliente(Cliente nuevoCliente){
         colaClientes.add(nuevoCliente);
     }
 
-    public static void siguienteCliente(){
+    public void siguienteCliente(){
         colaClientes.poll();
     }
 
-    public static boolean isCajaAbierta(){
+    public boolean isCajaAbierta(){
         if(!cajaabierta){
             return true;
         }
         return false;
     }
 
-    public static int cerrarCaja(){
-        if(!cajaabierta){
-            return 0;
-        }
-        return 1;
+    public boolean getCajaAbierta(){
+        return cajaabierta;
     }
 
-    public static void atencionCliente(){
+    public void abrirCaja() {
+        if(cajaabierta){
+            System.out.println("La caja ya está abierta");
+        }else{
+            System.out.println("La caja se está abriendo");
+            cajaabierta = true;
+        }
+    }
+
+    public void atencionCliente(){
         if(colaClientes.isEmpty()){
             System.out.println("No hay nadie");
         }else{
@@ -46,16 +48,17 @@ public class Cajero {
         }
     }
 
+@Override
     public String toString(){
 
         String mensajeCajero = "";
 
         mensajeCajero += "============================== \n";
-        mensajeCajero += "*Número de caja:" + this.NUMERO_CAJA + "\n";
-        mensajeCajero += "*Total de clientes" + colaClientes.size() + "\n";
+        mensajeCajero += "*Número de caja: " + this.NUMERO_CAJA + "\n";
+        mensajeCajero += "*Total de clientes: " + colaClientes.size() + "\n";
         mensajeCajero += "*Clientes en la cola" + "\n";
         mensajeCajero += colaClientes;
-        mensajeCajero += "==============================";
+        mensajeCajero += "==============================" + "\n";
 
         return mensajeCajero;
     }

@@ -8,6 +8,10 @@ public class Cliente {
     private String nombre;
     Stack<String> cestaCompra = new Stack<String>();
 
+    public Cliente(){
+        this.nombre = Producto.nombreAleatorio();
+    }
+
     public String getNombre() {
        return this.nombre = Producto.nombreAleatorio();
     }
@@ -31,7 +35,7 @@ public class Cliente {
         mensajeCliente += "*Total de productos" + cestaCompra.size() + "\n";
         mensajeCliente += "*Lista de articulos en la cesta" + "\n";
         mensajeCliente += cestaCompra;
-        mensajeCliente += "==============================";
+        mensajeCliente += "==============================" + "\n";
 
         return mensajeCliente;
     }
