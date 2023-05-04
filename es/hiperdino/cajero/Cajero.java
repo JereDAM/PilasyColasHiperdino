@@ -38,7 +38,7 @@ public class Cajero {
         return 1;
     }
 
-    public void atencionCliente(){
+    public static void atencionCliente(){
         if(colaClientes.isEmpty()){
             System.out.println("No hay nadie");
         }else{
