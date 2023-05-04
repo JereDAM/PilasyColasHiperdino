@@ -9,6 +9,7 @@ import es.hiperdino.cliente.Cliente;
 public class Cajero {
 
     private final int NUMERO_CAJA = 18;
+    private boolean cajaabierta = false;
     static Queue<Cliente> colaClientes = new LinkedList<>();
 
     static Cliente nuevoCliente = new Cliente();
@@ -21,6 +22,28 @@ public class Cajero {
 
     public static void siguienteCliente(){
         colaClientes.poll();
+    }
+
+    public boolean isCajaAbierta(){
+        if(!cajaabierta){
+            return true;
+        }
+        return false;
+    }
+
+    public int cerrarCaja(){
+        if(!cajaabierta){
+            return 0;
+        }
+        return 1;
+    }
+
+    public void atencionCliente(){
+        if(colaClientes.isEmpty()){
+            System.out.println("No hay nadie");
+        }else{
+            System.out.println(colaClientes.poll()); 
+        }
     }
 
     public String toString(){
