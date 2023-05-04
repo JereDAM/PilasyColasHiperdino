@@ -15,7 +15,7 @@ public class producto {
         return arrayProductos[productoAleatorio];
     }
 
-    public static String clienteAleatorio() {
+    public static String nombreAleatorio() {
         
         Random nombreRandom = new Random();
 
