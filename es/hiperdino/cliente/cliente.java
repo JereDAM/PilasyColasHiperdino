@@ -16,8 +16,23 @@ public class Cliente {
         cestaCompra.push(Producto.productoAleatorio());
     }
 
-    public void mostrarCesta(){
+    public void mostrarCesta(){ //Resulta que no sirve xd
         System.out.println(cestaCompra);
     }
 
+    @Override
+
+    public String toString(){
+
+        String mensajeCliente = "";
+
+        mensajeCliente += "============================== \n";
+        mensajeCliente += "*Nombre:" + this.nombre + "\n";
+        mensajeCliente += "*Total de productos" + cestaCompra.size() + "\n";
+        mensajeCliente += "*Lista de articulos en la cesta" + "\n";
+        mensajeCliente += cestaCompra;
+        mensajeCliente += "==============================";
+
+        return mensajeCliente;
+    }
 }
