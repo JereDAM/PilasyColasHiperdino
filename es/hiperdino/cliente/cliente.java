@@ -9,7 +9,7 @@ public class Cliente {
     Stack<String> cestaCompra = new Stack<String>();
 
     public String getNombre() {
-       return this.nombre = Producto.clienteAleatorio();
+       return this.nombre = Producto.nombreAleatorio();
     }
 
     public void meterEnCesta(){
