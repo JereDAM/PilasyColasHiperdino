@@ -9,7 +9,7 @@ import es.hiperdino.cliente.Cliente;
 public class Cajero {
 
     private final int NUMERO_CAJA = 18;
-    private boolean cajaabierta = false;
+    private static boolean cajaabierta = false;
     static Queue<Cliente> colaClientes = new LinkedList<>();
 
     static Cliente nuevoCliente = new Cliente();
@@ -24,14 +24,14 @@ public class Cajero {
         colaClientes.poll();
     }
 
-    public boolean isCajaAbierta(){
+    public static boolean isCajaAbierta(){
         if(!cajaabierta){
             return true;
         }
         return false;
     }
 
-    public int cerrarCaja(){
+    public static int cerrarCaja(){
         if(!cajaabierta){
             return 0;
         }
