@@ -9,9 +9,5 @@ public class Cajero {
 
     Queue<Cliente> colaClientes = new LinkedList<>();
 
-    public Boolean hayCliente() {
-        return false;
-    }
-
 
 }
